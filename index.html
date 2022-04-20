@@ -6,23 +6,74 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
 <body>
+  <main class="main-container">
+    <section class="header-section">
+      <h1>devfinder</h1>
+      <a href="#" target="_blank" class="mode-toggle">
+        <!-- <h2></h2>Light -->
+        <h2>Dark</h2>
+        <img src="./assets/icon-moon.svg" alt="switch to dark mode">
+      </a>
+    </section>
+    <form class="search-box">
+        <img src="./assets/icon-search.svg" alt="">
+        <input type="search" placeholder="Search GitHub username...">
+        <button type="button" aria-placeholder="Search"></button>
+    </form>
+    <section class="user-info">
+      <div class="userImage-box">Put user avatar here</div>
+      <div class="userHeader-box">
+        <h1>Username</h1>
+        <h2>User ID</h2>
+        <p>Joined _________<span>join-info</span></p>
+        <p class="user-profile">User Profile....</p>
+      </div>
+      <div class="user-stats">
+        <div class="stats">
+          <h3>Repos</h3>
+          <h4>repo-data</h4>
+        </div>
+        <div class="stats">
+          <h3>Followers</h3>
+          <h4>followers-data</h4>
+        </div>
+        <div class="stats">
+          <h3>Following</h3>
+          <h4>following-data</h4>
+        </div>
+      </div>
+    </section>
+    <section class="link-section">
+      <a href="" target="_blank">
+        <img src="./assets/icon-location.svg" alt="">
+        <span>location-data</span>
+      </a>
+      <a href="" target="_blank">
+        <img src="./assets/icon-website.svg" alt="">
+        <span>website-data</span>
+      </a><a href="" target="_blank">
+        <img src="./assets/icon-twitter.svg" alt="">
+        <span>twitter-data</span>
+      </a><a href="" target="_blank">
+        <img src="./assets/icon-company.svg" alt="">
+        <span>company-data</span>
+      </a>
+    </section>
+  
+  
 
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
+  
+  
+  
+  </main>
 </body>
 </html>
