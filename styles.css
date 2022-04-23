@@ -205,7 +205,6 @@ text-decoration-line: none;
 .user-info {
   display: flex;
   justify-content: flex-start;
-  align-items: left;
   flex-wrap: wrap;
 
   margin: min(1.6rem, 23.67rem);
@@ -214,12 +213,12 @@ text-decoration-line: none;
 
 }
 
-#userImage {
+#avatar {
   height: 4.67rem; /*70px*/
 
 }
 
-.userHeader-box {
+#info-box {
   height: 4.67rem; /*70px*/;
   margin-left: 1rem;
 
@@ -255,7 +254,14 @@ a {
   color: var(--bluegrey);
 }
 
+a:hover {text-decoration-line: underline;}
+
 a span {
   margin-left: .8rem;
   width: 75%;
+}
+
+.not-available {
+  mix-blend-mode: normal;
+  opacity: 0.5;
 }
