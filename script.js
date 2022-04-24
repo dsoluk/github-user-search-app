@@ -1,13 +1,95 @@
+// Wait for document to load
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.documentElement.setAttribute("data-theme", "light");
+  });
+
+  let themeSwitcher = document.querySelector(".light-toggle");
+
+  themeSwitcher.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    let themeDiv = document.querySelector(".mode-toggle");
+
+     // Get the current selected theme, on the first run
+      // it should be `light`
+    var currentTheme = document.documentElement.getAttribute("data-theme");   
+
+    console.log(currentTheme)
+    var themeDiv_html = currentTheme === "dark"
+        ? `
+            <p class="light-toggle">Light</p>
+            <img src="./assets/icon-sun.svg" alt="switch to dark mode">
+        `
+        : `
+            <p class="light-toggle">Dark</p>
+            <img src="./assets/icon-moon.svg" alt="switch to light mode">
+        `
+    themeDiv.innerHTML = themeDiv_html;
+
+
+
+    // Switch between `dark` and `light`
+    var switchToTheme = currentTheme === "dark" ? "light" : "dark"
+
+    // Set our currenet theme to the new one
+    document.documentElement.setAttribute("data-theme", switchToTheme);
+    console.log(switchToTheme);
+
+  });
+
+
 let btn = document.querySelector("#search");
 // console.log(btn);
 
-function nullData(my_var) {
-    if(my_var !== null) {
-        return `<span>${my_var}</span>`
+function nullData(my_var, id) {
+    if(my_var !== null  && my_var !=="") {
+        return `
+            <a href="" target="_blank">
+                <img src="./assets/icon-${id}.svg" alt="">
+                <span>${my_var}</span>
+            </a>
+            `
     } else {
-        return `<span class="not-available">Not Available</span>`
+        return `
+            <a class="not-available" href="" target="_blank">
+                <img src="./assets/icon-${id}.svg" alt="">
+                <span>Not Available</span>
+            </a>
+            `
     }
 }
+
+function nullBio(bio) {
+    if(bio !== null  && bio !=="") {
+        return `<p id = "user-bio">${bio}</p>`
+    } else {
+        return `<p id = "user-bio" class = "not-available">This profile has no bio</p>`
+    }
+}
+
+function nullName(name) {
+    if(name !== null  && name !=="") {
+        return `<h1>${name}</h1>`
+    } else {
+        return `<h1>${data.login.replace('@', '')}</h1>`
+    }
+}
+
+function calcDate(date) {
+    const dateStr = new Date(date);
+    // console.log(dateStr);
+    let optionsYM = { month: 'short', year: 'numeric'};
+    // console.log(new Intl.DateTimeFormat('en-US', optionsYM).format(dateStr));
+    let ym = new Intl.DateTimeFormat('en-US', optionsYM).format(dateStr);
+    
+    let optionsDay = { day: 'numeric'};
+    // console.log(new Intl.DateTimeFormat('en-US', optionsDay).format(dateStr));
+    let day = new Intl.DateTimeFormat('en-US', optionsDay).format(dateStr);
+
+    return day + " " + ym
+
+}
+
 
 btn.addEventListener('change', function(e) {
     e.preventDefault();
@@ -21,51 +103,36 @@ btn.addEventListener('change', function(e) {
 
     document.querySelector("#avatar-box").innerHTML = `
         <img id="avatar" src="${data.avatar_url}" alt="avatar for ${data.login}">
-        `
+        `;
     document.querySelector("#info-box").innerHTML = `
-        <h1>${data.name}</h1>
+        ${nullName(data.name)}</h1>
         <h3>@<span>${data.login}</span></h2>
-        <h4 id="join-date">Joined <span>${data.created_at}</span></h4>\
-        `
-    document.querySelector("#bio-box").innerHTML = `
-        <p id="user-bio">${data.bio}</p>
-        `
+        <h4 id="join-date">Joined <span>${calcDate(data.created_at)}</span></h4>\
+        `;
+    document.querySelector("#bio-box").innerHTML = nullBio(data.bio);
+
     document.querySelector(".stats1").innerHTML = `
         <h4>Repos</h4>
         <h2>${data.public_repos}</h2>
-    `
+    `;
     document.querySelector(".stats2").innerHTML = `
         <h4>Followers</h4>
         <h2>${data.followers}</h2>
-    `
+    `;
     document.querySelector(".stats3").innerHTML = `
         <h4>Following</h4>
         <h2>${data.following}</h2>
-    `
-    document.querySelector("#link1").innerHTML = `
-        <a href="" target="_blank">
-            <img src="./assets/icon-location.svg" alt="">
-            <span>${data.location}</span>
-        </a>
-        `
-    document.querySelector("#link2").innerHTML = `
-        <a href="${data.blog}" target="_blank">
-            <img src="./assets/icon-website.svg" alt="">
-            <span>${data.blog}</span>
-        </a>
-        `
-    document.querySelector("#link3").innerHTML = `
-        <a href="https://www.twitter.com" target="_blank">
-            <img src="./assets/icon-twitter.svg" alt="">
-            ${nullData(data.twitter_username)}
-        </a>
-        `
-    document.querySelector("#link4").innerHTML = `
-        <a href="" target="_blank">
-            <img src="./assets/icon-company.svg" alt="">
-            ${nullData(data.company)}
-        </a>
-        `
+    `;
+    
+    document.querySelector("#location").innerHTML = 
+        nullData(data.location, document.querySelector("#location").id)
+    document.querySelector("#website").innerHTML = 
+        nullData(data.blog, document.querySelector("#website").id)
+    document.querySelector("#twitter").innerHTML = 
+        nullData(data.twitter_username, document.querySelector("#twitter").id)
+    document.querySelector("#company").innerHTML = 
+        nullData(data.company, document.querySelector("#company").id)
+        
 
         
 
@@ -73,3 +140,5 @@ btn.addEventListener('change', function(e) {
 
     
 });
+
+

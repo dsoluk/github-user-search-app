@@ -11,6 +11,9 @@
     --purewhite: #FFFFFF;
     --darkblack: #141D2F;
     --darkblue: #1E2A47;
+
+    --background-color: #F6F8FF;
+    --text-color: #4B6A9B;
 }
 
 *,
@@ -44,13 +47,13 @@ h1 {
     font-weight: 700;
     font-size: 26px;
     line-height: 39px;
-    color: var(--black);
+    /* color: var(--black); */
   }
 
 div > h1 {
   font-size: 16px;
   line-height: 24px;
-  color: var(--black);
+  /* color: var(--black); */
 }
 
 h2 {
@@ -79,6 +82,7 @@ p {
   font-size: 13px;
   line-height: 25px;
   color: var(--bluegrey);
+  min-width: 10rem;
 }
 
 Basic Elements
@@ -114,6 +118,11 @@ button:hover {
     background-color: var(--brightbluehover);
 }
 
+[data-theme="dark"] {
+  --background-color: var(--darkblue);
+  --text-color: var(--purewhite);
+}
+
 html,body {
   font-family: 'Space Mono', monospace;
   font-style: normal;
@@ -122,10 +131,17 @@ html,body {
   line-height: 25px;
 
   box-sizing: border-box;
-  color: var(--bluegrey);
-  background-color: var(--offwhite);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  /* color: var(--bluegrey);
+  background-color: var(--offwhite); */
 }
 
+/* .dark-mode {
+  background-color: var(--darkblue);
+  color: var(--purewhite);
+} */
 
 
 
@@ -154,9 +170,10 @@ letter-spacing: 2.5px;
 color: var(--grey);
 text-transform: uppercase;
 padding-right: 1em;
+min-width: auto;
 }
 
-a.mode-toggle {
+.mode-toggle {
 display: flex;
 justify-content: center;
 align-items: center;
@@ -215,6 +232,7 @@ text-decoration-line: none;
 
 #avatar {
   height: 4.67rem; /*70px*/
+  border-radius: 50%;
 
 }
 
