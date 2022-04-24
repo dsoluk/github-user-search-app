@@ -1,41 +1,5 @@
-// Wait for document to load
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.documentElement.setAttribute("data-theme", "light");
-    // Get our button switcher
-    var themeSwitcher = document.getElementById("theme-switcher");
-
-    // When our button gets clicked
-    themeSwitcher.onclick = function() {
-        // Get the current selected theme, on the first run
-        // it should be `light`
-        var currentTheme = document.documentElement.getAttribute("data-theme");
-
-        // Switch between `dark` and `light`
-        var switchToTheme = currentTheme === "dark" ? "light" : "dark"
-
-        // switch the button button text and icon
-        var themeSwitcher_html = currentTheme === "light"
-        ? `
-            <span class="button-wrap">Light
-            <img src="./assets/icon-sun.svg" alt="switch to dark mode">
-            </span>
-        `
-        : `
-            <span class="button-wrap">Dark
-            <img src="./assets/icon-moon.svg" alt="switch to light mode">
-            </span>
-        `
-        themeSwitcher.innerHTML = themeSwitcher_html;
-      
-        // Set our current theme to the new one
-        document.documentElement.setAttribute("data-theme", switchToTheme);
-    }
-  });
-
-// Search button logic
-// --------------------
-
-
+let btn = document.querySelector("#search-btn");
+// console.log(btn);
 
 function nullData(my_var, id) {
     if(my_var !== null  && my_var !=="") {
@@ -85,12 +49,13 @@ function calcDate(date) {
     return day + " " + ym
 
 }
-let btn = document.querySelector("#search-btn");
 
-btn.addEventListener('click', function(e) {
-    e.preventDefault();s
+
+btn.addEventListener('change', function(e) {
+    // e.preventDefault();
 
     let searchName = document.querySelector("#search").value;
+    // console.log(searchName);
 
     fetch ("https://api.github.com/users/" + searchName)
     .then ((result) => result.json())
@@ -127,13 +92,27 @@ btn.addEventListener('click', function(e) {
         nullData(data.twitter_username, document.querySelector("#twitter").id)
     document.querySelector("#company").innerHTML = 
         nullData(data.company, document.querySelector("#company").id)
- 
+        
+
+        
+
     })
+
     
 });
 
+console.log("Theme before: " + currentTheme)
+    var themeSwitcher_html = currentTheme === "dark"
+        ? `
+            <span class="button-wrap">Light
+            <img src="./assets/icon-sun.svg" alt="switch to dark mode">
+            </span>
+        `
+        : `
+            <span class="button-wrap">Dark
+            <img src="./assets/icon-moon.svg" alt="switch to light mode">
+            </span>
+        `
+    themeSwitcher.innerHTML = themeSwitcher_html;
 
-
-
-
-
+    console.log("themeSwitcher html: " + themeSwitcher_html);

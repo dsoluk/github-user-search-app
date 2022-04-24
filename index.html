@@ -20,12 +20,9 @@
   <main class="main-container">
     <header class="header">
       <h1>devfinder</h1>
-      <!-- <a href="#" target="_blank" class="mode-toggle"> -->
-      <div class="mode-toggle">
-        <p class="light-toggle">Dark</p>
-        <img src="./assets/icon-moon.svg" alt="switch to dark mode">
-      </div>
-      <!-- </a> -->
+      <button type="button" id="theme-switcher">
+        <span class="button-wrap">Dark<img src="./assets/icon-moon.svg" /></span>
+    </button>
     </header>
     <form role="search">
         <div class="search-wrap">
@@ -40,7 +37,7 @@
           >
           <p id="noresults">No Results</p>
           <button type="button"
-                  id="button"
+                  id="search-btn"
                   aria-placeholder="execute search">Search
           </button>
         </div>
