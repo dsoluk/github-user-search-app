@@ -5,6 +5,9 @@
     --darkblue: #1E2A47;
     --background-color: #F6F8FF;
     --text-color: #4B6A9B;
+    --section-bg: #FEFEFE;
+    --stats-bg: #F6F8FF;
+    --stats-color: #4B6A9B;
 
     --brightblue: #0079FF;
     --brightbluehover: #60ABFF;
@@ -15,6 +18,8 @@
     --white: #FEFEFE;
     --darkblack: #141D2F;
     --logo-color: #222731;
+
+
 }
 
 *,
@@ -28,7 +33,9 @@
 img {
   max-width: 100%;
   height: auto;
+  min-width: 20px;
   /* display: block; */
+  color: var(--text-color);
 }
 
 button, input, select, textarea {
@@ -42,9 +49,12 @@ input, textarea, select {
 }
 
 [data-theme="dark"] {
-  --background-color: var(--darkblue);
+  --background-color: var(--darkblack);
   --text-color: var(--purewhite);
   --logo-color: var(--purewhite);
+  --section-bg: var(--darkblue);
+  --stats-bg: var(--darkblack);
+  --stats-color: var(--purewhite);
 }
 
 body {
@@ -81,7 +91,7 @@ h2 {
 font-weight: 700;
 font-size: 22px;
 line-height: 33px;
-color: var(--bluegrey);
+/* color: var(--bluegrey); */
 }
 
 h3 {
@@ -95,19 +105,19 @@ h4 {
 font-weight: 400;
 font-size: 13px;
 line-height: 19px;
-color: var(--bluegrey);
+/* color: var(--bluegrey); */
 }
 
 p {
 font-weight: 400;
 font-size: 13px;
 line-height: 25px;
-color: var(--bluegrey);
+/* color: var(--bluegrey); */
 min-width: 10rem;
 }
 
 .main-container {
-  /* width: min(90%, 80rem); */
+  width: min(90%, 80rem);
   /* border: 2px solid red; */
   margin: min(1.6rem, 23.67rem);
 }
@@ -132,6 +142,8 @@ button#theme-switcher {
 
 }
 
+button#theme-switcher:hover {cursor: pointer;}
+
 .button-wrap {
 font-weight: 700;
 font-size: 13px;
@@ -139,6 +151,7 @@ line-height: 19px;
 letter-spacing: 2.5px;
 text-transform: uppercase;
 color: var(--text-color);
+min-width: 75px;
 
 }
 
@@ -155,20 +168,29 @@ color: var(--text-color);
   border-radius: 15px;
   height: 4rem;
   margin-bottom: 1.07rem;
+  background-color: var(--section-bg);
 }
 
 input {
-width: min(12.27rem, 15rem);
+width: min(13rem, 15rem);
 height: min(1.67rem, 3rem);
 font-weight: 400;
 font-size: 13px;
 line-height: 25px;
-color: var(--bluegrey);
+color: var(--text-color);
 }
+
+::placeholder {color: var(--text-color);}
 
 input[type="search"] {
 border-style: none;
+background:none;
+}
 
+input[type="search"]:active,
+input[type="search"]:focus {
+  border-style: none;
+  background:none;
 }
 
 button#search-btn {
@@ -199,13 +221,16 @@ background-color: var(--brightbluehover);
   font-size: 15px;
   line-height: 22px;
   color: #F74646;
+  position: absolute;
+  padding-bottom: 20px;
+  margin-left: -20px;
 }
 
 /* Github User info card
 -------------------- */
 
 .github-info-box {
-background: var(--white);
+background: var(--section-bg);
 box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 border-radius: 15px;
 
@@ -246,7 +271,8 @@ align-items: center;
   justify-content: space-evenly;
   /* align-items: center; */
 
-  background-color: var(--offwhite);
+  background-color: var(--stats-bg);
+  color: var(--stats-color);
   border-radius: 10px;
 
   width: 100%;
@@ -267,7 +293,7 @@ align-items: center;
 
 a {
   text-decoration: none;
-  color: var(--bluegrey);
+  color: var(--text-color);
 }
 
 a:hover {text-decoration-line: underline;}

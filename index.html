@@ -30,14 +30,15 @@
           <input type="search"
                  placeholder="Search GitHub username..."
                  size="26"
-                 require7
+                 require
                  aria-label="Enter search name"
                  id="search"
                  name="q"
           >
           
-          <div class="hide"></div>
-          
+          <div class="noresults">
+            <p class="hide">No result</p>
+          </div>
           <button type="button"
                   id="search-btn"
                   aria-placeholder="execute search">Search
