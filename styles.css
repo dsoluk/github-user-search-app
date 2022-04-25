@@ -189,13 +189,16 @@ button#search-btn:hover {
 background-color: var(--brightbluehover);
 }
 
-
-#search-icon {
-  /* margin-inline: 1em; */
+.hide {
+  display: none;
 }
 
-#noresults {
-  display: none;
+.noresults {
+  display:inline-block;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #F74646;
 }
 
 /* Github User info card

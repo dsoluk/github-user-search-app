@@ -85,17 +85,8 @@ function calcDate(date) {
     return day + " " + ym
 
 }
-let btn = document.querySelector("#search-btn");
 
-btn.addEventListener('click', function(e) {
-    e.preventDefault();s
-
-    let searchName = document.querySelector("#search").value;
-
-    fetch ("https://api.github.com/users/" + searchName)
-    .then ((result) => result.json())
-    .then ((data) => {console.log(data)
-
+function fillUserdata(data) {
     document.querySelector("#avatar-box").innerHTML = `
         <img id="avatar" src="${data.avatar_url}" alt="avatar for ${data.login}">
         `;
@@ -109,16 +100,16 @@ btn.addEventListener('click', function(e) {
     document.querySelector(".stats1").innerHTML = `
         <h4>Repos</h4>
         <h2>${data.public_repos}</h2>
-    `;
+        `;
     document.querySelector(".stats2").innerHTML = `
         <h4>Followers</h4>
         <h2>${data.followers}</h2>
-    `;
+        `;
     document.querySelector(".stats3").innerHTML = `
         <h4>Following</h4>
         <h2>${data.following}</h2>
-    `;
-    
+        `;
+
     document.querySelector("#location").innerHTML = 
         nullData(data.location, document.querySelector("#location").id)
     document.querySelector("#website").innerHTML = 
@@ -127,13 +118,33 @@ btn.addEventListener('click', function(e) {
         nullData(data.twitter_username, document.querySelector("#twitter").id)
     document.querySelector("#company").innerHTML = 
         nullData(data.company, document.querySelector("#company").id)
- 
-    })
-    
+}
+
+// fetch the initial data with user=octocat
+fetch ("https://api.github.com/users/octocat")
+    .then ((result) => result.json())
+    .then ((data) => {fillUserdata(data)
 });
 
 
+// add Event Listerner to the Search button
+let btn = document.querySelector("#search-btn");
 
+btn.addEventListener('click', function(e) {
+    // e.preventDefault();
 
+    let searchName = document.querySelector("#search").value;
 
+    fetch ("https://api.github.com/users/" + searchName)
+        .then ((result) => result.json())
+        .then ((data) => {fillUserdata(data)
 
+        })
+    .catch(error => {
+        console.error('Error:', error);
+        document.querySelector(".hide").innerHTML = `
+            <p class="noresults">No Results</p>
+            `
+    });
+    
+});
