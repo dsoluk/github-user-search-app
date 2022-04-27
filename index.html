@@ -22,7 +22,7 @@
       <h1>devfinder</h1>
       <button type="button" id="theme-switcher">
         <span class="button-wrap">Dark<img src="./assets/icon-moon.svg" /></span>
-    </button>
+      </button>
     </header>
     <form role="search">
         <div class="search-wrap">
@@ -45,24 +45,29 @@
           </button>
         </div>
     </form>
-    <article class="github-info-box">
-      <article class="user-info">
+    <section class="github-info-box">
+      <div class="wrapper">
         <div id ="avatar-box"></div>
-        <div id ="info-box"></div>
+        <!-- <div class="user-info"> -->
+          <div id ="info-box"></div>
+          <div id ="join-box"></div>
+        <!-- </div>   -->
         <div id ="bio-box"></div> 
-        <div class="user-stats">
-          <div class="stats stats1"></div>
-          <div class="stats stats2"></div>
-          <div class="stats stats3"></div>
-        </div>
-      </article>
-      <article class="link-section">
-        <div id="location"></div>
-        <div id="website"></div>
-        <div id="twitter"></div>
-        <div id="company"></div>
-      </article>
-    </article>
+        <ul class="user-stats">
+          <li class="stats stats1"></li>
+          <li class="stats stats2"></li>
+          <li class="stats stats3"></li>
+        </ul>
+        <form class="link-section">
+          <ul>
+            <li id="location"></li>
+            <li id="website"></li>
+            <li id="twitter"></li>
+            <li id="company"></li>
+          </ul>
+        </form>
+      </div>
+    </section>
   </main>
 </body>
 </html>

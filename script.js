@@ -35,12 +35,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 // Search button logic
 // --------------------
 
+function fn_href(parm) {
+    if (parm.substr(0, 1) === "@") {
+        return 'https://github.com/github';
+    } else {
+        return parm;
+    };
+}
 
 
 function nullData(my_var, id) {
     if(my_var !== null  && my_var !=="") {
         return `
-            <a href="" target="_blank">
+            <a href="${fn_href(my_var)}" target="_blank">
                 <img src="./assets/icon-${id}.svg" alt="">
                 <span>${my_var}</span>
             </a>
@@ -87,7 +94,7 @@ function calcDate(date) {
 }
 
 function fillUserdata(data) {
-    console.log(data.message);
+    // console.log(data.message);
 
     if (data.message === "Not Found") {
         document.querySelector(".noresults").innerHTML = 
@@ -104,12 +111,15 @@ function fillUserdata(data) {
           })
         }
     else {
+        console.log(data);
         document.querySelector("#avatar-box").innerHTML = `
             <img id="avatar" src="${data.avatar_url}" alt="avatar for ${data.login}">
             `;
         document.querySelector("#info-box").innerHTML = `
             ${nullName(data.name)}</h1>
             <h3>@<span>${data.login}</span></h2>
+            `
+        document.querySelector("#join-box").innerHTML = `
             <h4 id="join-date">Joined <span>${calcDate(data.created_at)}</span></h4>\
             `;
         document.querySelector("#bio-box").innerHTML = nullBio(data.bio);
