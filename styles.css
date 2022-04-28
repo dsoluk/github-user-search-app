@@ -18,8 +18,6 @@
     --white: #FEFEFE;
     --darkblack: #141D2F;
     --logo-color: #222731;
-
-
 }
 
 *,
@@ -262,10 +260,10 @@ background: var(--section-bg);
 box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
 border-radius: 15px;
 
-display: flex;
+/* display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center;
+align-items: center; */
 
 
 }
@@ -274,14 +272,42 @@ align-items: center;
   width: 85%;
   margin: clamp(16px, 8% ,48px);
   display: grid;
-  grid-template-columns: 70px, 1fr, 1fr;
-  grid-template-rows: minmax(24px, 39px), 24px, auto;
+  grid-template-columns: 70px auto;
+  grid-template-rows: 48px 22px auto auto auto auto;
   grid-template-areas:
+    "avatar info"
+    "avatar join"
+    "bio bio"
+    "stats stats"
+    "link1 link1"
+    "link2 link2"
+
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 117px 124px auto;
+    grid-template-rows: 63px 51px auto auto auto;
+    grid-template-areas:
     "avatar info info"
     "avatar join join"
     "bio bio bio"
     "stats stats stats"
-    "links links links"
+    "link1 link1 link2";
+  }
+}
+@media screen and (min-width: 850px) {
+  .wrapper {
+    grid-template-columns: 117px 202px auto;
+    grid-template-rows: 63px 31px auto auto auto;
+    grid-template-areas:
+    "avatar info join"
+    "avatar . ."
+    "avatar bio bio"
+    "stats stats stats"
+    "link1 link1 link2"
+}
+  }
 }
 
 /* .user-info {
@@ -296,7 +322,7 @@ align-items: center;
   }
 } */
 
-#avatar-box {grid-area: "avatar";}
+#avatar-box {grid-area: avatar;}
 
 #avatar {
   width: clamp(70px, 20vw , 117px);
@@ -305,31 +331,38 @@ align-items: center;
 }
 
 #info-box {
-  height: 4.67rem; /*70px*/;
-  margin-inline: 1rem;
-  grid-area: "info";
+  /* height: 4.67rem; 70px; */
+  margin-left: 1rem;
+  grid-area: info;
 
 }
 
 #join-box {
-  grid-area: "join";
-  text-align: right;
-  padding-top: 11px;
+  grid-area: join;
+  /* text-align: right; */
+  /* padding-top: 11px; */
   font-size: 15px;
   line-height: 22px;
-
+  margin-left: 1rem;
 }
 
+@media screen and (min-width: 850px) {
+  #join-box {
+    text-align: right;
+  }
+}
+
+
 #bio-box {
-  grid-area: "bio";
-  margin-inline: 1rem;
+  grid-area: bio;
+  /* margin-inline: 1rem; */
 }
 
 li {list-style-type: none;}
 
 
 .user-stats {
-  grid-area: "stats";
+  grid-area: stats;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -347,22 +380,19 @@ li {list-style-type: none;}
 .stats {text-align: center;}
 
 .link-section {
-  grid-area: "links"
-  display: flex;
+  /* grid-area: links; */
+  /* display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 3.2rem;
-  margin-bottom: 3.2rem;
-  width: 100%;
+  justify-content: center; */
+  /* margin-left: 3.2rem; */
+  /* margin-bottom: 3.2rem; */
+  /* width: 100%; */
 }
 
-@media screen and (min-width: 768px) {
-  .link-section {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    max-height: 63px;
-  }
-}
+.link1 {grid-area: link1;}
+
+.link2 {grid-area: link2;}
 
 a {
   text-decoration: none;
@@ -372,8 +402,13 @@ a {
 a:hover {text-decoration-line: underline;}
 
 a span {
-  margin-left: .8rem;
+  margin-left: .3rem;
   width: 75%;
+}
+
+a > img {
+  height: 20px;
+  max-width: 20px;
 }
 
 .not-available {
