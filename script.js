@@ -1,3 +1,6 @@
+// LIGHT / DARK switch
+// ---------------------
+
 // Wait for document to load
 document.addEventListener("DOMContentLoaded", function(event) {
     document.documentElement.setAttribute("data-theme", "light");
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   });
 
-// Search button logic
+// SEARCH BUTTON LOGIC
 // --------------------
 
 function fn_href(parm) {
@@ -42,7 +45,6 @@ function fn_href(parm) {
         return parm;
     };
 }
-
 
 function nullData(my_var, id) {
     if(my_var !== null  && my_var !=="") {

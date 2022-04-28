@@ -16,32 +16,25 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
 
 Users should be able to:
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Search for GitHub users by their username
-- See relevant user information based on their search
-- Switch between light and dark themes
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
+- View the optimal layout for the app depending on their device's screen size - DONE
+- See hover states for all interactive elements on the page - DONE
+- Search for GitHub users by their username - DONE
+- See relevant user information based on their search - DONE
+- Switch between light and dark themes - DONE
+- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS. - NOT DONE
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Mobile-Light](./screenshot-mobile-light.jpg)
+![Mobile-Dark](./screenshot-mobile-dark.jpg)
+![Desktop-Light](./screenshot-desktop-dark.jpg)
+![Desktop-Dark](./screenshot-desktop-dark.jpg)
 
 ### Links
 
@@ -53,62 +46,35 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- CSS custom properties for color and background color...very useful for the dark / light mode switch
+- Flexbox for the layout of the 3 main sections (header, form for search bar and form for user info)
+- CSS Grid for the user info...made the placement of various info items easy for different media layouts
 - Mobile-first workflow
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Github user API with Fetch and template literals
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was my first experience using JS to bring in data from external source and injecting html code. And, figuring what a solution for the toggle (amongst researching many) was fun as well. Liked having to creatively use CSS custom properties (aka variables).
 
-To see how you can add code snippets, see below:
+Used grid a bit more that I thought I would on this challenge. I started off thinking I could do it with Flexbox but got complicated and grid to the rescue to make it easy.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I explored using the clamp functionality as well.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Still struggling to efficiently get through all the code requirements. Seem to get 75% down, then struggle with hours trying to improve to match requirements (e.g. making responsive). Thinking I just need to keep practicing and maybe trying to use BEM or CUBE techniques.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [How to Implement Dark Mode with CSS and JavaScript | PullRequest Blog](https://onedrive.live.com/view.aspx?resid=A15EFD729D38AB58%21104338&id=documents&wd=target%28Projects%20Done.one%7CB3B0A22B-1299-483A-998F-B1C2E5F6E1A8%2FGithub%20Users%7CB3828B62-461D-454E-89A0-24F44CB09702%2F%29
+  onenote:https://d.docs.live.net/a15efd729d38ab58/Documents/OldDocs2021/WebDev/Projects%20Done.one#Github%20Users&section-id={B3B0A22B-1299-483A-998F-B1C2E5F6E1A8}&page-id={B3828B62-461D-454E-89A0-24F44CB09702}&object-id={C619D95A-4987-480F-BDC4-AAAD9F554C2A}&4E) - Among all the online solutions to the dark/light mode this made most sense...maybe slightly more complicated than some others.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+Used Morten's LinkedIn Learn courses as well. For example, https://www.linkedin.com/learning/css-advanced-layouts-with-grid/css-grid-means-rethinking-web-layouts?autoplay=true
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@DSoluk](https://www.frontendmentor.io/profile/DSoluk)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+None so far
