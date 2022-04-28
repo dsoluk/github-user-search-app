@@ -31,10 +31,10 @@ Users should be able to:
 
 ### Screenshot
 
-![Mobile-Light](./screenshot-mobile-light.jpg)
-![Mobile-Dark](./screenshot-mobile-dark.jpg)
-![Desktop-Light](./screenshot-desktop-dark.jpg)
-![Desktop-Dark](./screenshot-desktop-dark.jpg)
+![Mobile-Light](./screenshot-mobile-light.png)
+![Mobile-Dark](./screenshot-mobile-dark.png)
+![Desktop-Light](./screenshot-desktop-dark.png)
+![Desktop-Dark](./screenshot-desktop-dark.png)
 
 ### Links
 
@@ -66,8 +66,7 @@ Still struggling to efficiently get through all the code requirements. Seem to g
 
 ### Useful resources
 
-- [How to Implement Dark Mode with CSS and JavaScript | PullRequest Blog](https://onedrive.live.com/view.aspx?resid=A15EFD729D38AB58%21104338&id=documents&wd=target%28Projects%20Done.one%7CB3B0A22B-1299-483A-998F-B1C2E5F6E1A8%2FGithub%20Users%7CB3828B62-461D-454E-89A0-24F44CB09702%2F%29
-  onenote:https://d.docs.live.net/a15efd729d38ab58/Documents/OldDocs2021/WebDev/Projects%20Done.one#Github%20Users&section-id={B3B0A22B-1299-483A-998F-B1C2E5F6E1A8}&page-id={B3828B62-461D-454E-89A0-24F44CB09702}&object-id={C619D95A-4987-480F-BDC4-AAAD9F554C2A}&4E) - Among all the online solutions to the dark/light mode this made most sense...maybe slightly more complicated than some others.
+- [How to Implement Dark Mode with CSS and JavaScript | PullRequest Blog] (https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/#:~:text=The%20CSS%20First%2C%20create%20a%20project%20with%20a,project%20and%20adds%20a%20style.css%20file%20to%20it.) - Among all the online solutions to the dark/light mode this made most sense...maybe slightly more complicated than some others.
 
 Used Morten's LinkedIn Learn courses as well. For example, https://www.linkedin.com/learning/css-advanced-layouts-with-grid/css-grid-means-rethinking-web-layouts?autoplay=true
 
